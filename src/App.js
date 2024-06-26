@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import ReservationForm from './components/ReservationForm';
+import ReservationsList from './components/ReservationsList';
+import MyCalendar from './components/Calendar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          <h1>Sistema de Reservas</h1>
+        </Col>
+      </Row>
+      <Row>
+        <Col md={6}>
+          <ReservationForm />
+        </Col>
+        <Col md={6}>
+          <MyCalendar />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <ReservationsList />
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
